@@ -1,6 +1,6 @@
 -- Credits to Stoneman for the original Boss Health Bar tool!
 -- Modified by oteek
-TOOL.Category = "oteek"
+TOOL.Category = "Yakuza Tools"
 TOOL.Name = "Yakuza Health Bars"
 
 if CLIENT then
