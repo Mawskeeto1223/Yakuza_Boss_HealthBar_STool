@@ -5,8 +5,18 @@ if SERVER then
 	util.AddNetworkString("yakuza_add_boss")
 	util.AddNetworkString("yakuza_remove_boss")
 	util.AddNetworkString("yakuza_boss_data")
-end
+	util.AddNetworkString("yakuza_healthupdate")
 
+	function UpdateHP()
+		if IsValid(Yakuza_bossHealthSystem.bossEntity) then
+			net.Start("yakuza_healthupdate")
+			net.WriteFloat(Yakuza_bossHealthSystem.bossEntity:Health())
+			net.Broadcast()
+		end
+	end
+
+	hook.Add("Think","HPBarfix", UpdateHP)
+end
 -- Getters and setters
 function Yakuza_bossHealthSystem:GetBoss()
 	return self.bossEntity

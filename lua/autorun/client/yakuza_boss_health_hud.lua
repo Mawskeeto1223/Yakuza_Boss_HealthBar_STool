@@ -117,12 +117,18 @@ net.Receive("yakuza_boss_data", function(len)
 	Yakuza_BossDataTable.BarStyle = style
 end)
 
+net.Receive("yakuza_healthupdate", function()
+	local hp = net.ReadFloat()
+	local boss = Yakuza_bossHealthSystem:GetBoss()
+	if IsValid(boss) then boss:SetNWFloat("Health", hp) end
+end)
+
 hook.Add("HUDPaint", "Yakuza_BossHealthBar.Render", function()
 	if !Yakuza_bossHealthSystem:IsValidBoss() then return end
 	if Yakuza_BossDataTable.Name == nil then return end
 	
 	local boss = Yakuza_bossHealthSystem:GetBoss()
-	local boss_health = boss:Health()
+	local boss_health = boss:GetNWFloat("Health",0)
 	local boss_max_health = boss:GetMaxHealth()
 	local onebar = GetConVar("yakuzabossbartool_onebar"):GetInt()
 	local barscr_w = 945	--bar x position
