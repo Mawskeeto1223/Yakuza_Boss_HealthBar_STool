@@ -1,9 +1,9 @@
--- Credits to Stoneman for the original Boss Health Bar tool.
+-- Credits to Stoneman for the original Boss Health Bar tool and Kurgan for the concept.
 -- Modified by oteek
 
 -- MAJOR BUGS/MISSING FEATURES:
 -- 1. Lerp animation can go out of bounds because of poor implementation.
--- 2. Doesn't properly update when used on NPCs/SNPCs but works fine for player and NextBots (not networked properly).
+-- 2. (FIXED) Doesn't properly update when used on NPCs/SNPCs but works fine for player and NextBots.
 -- 3. Doesn't scale on different resolutions but positions itself correctly at least.
 -- 4. Y3/Y5/Ishin!/Y0/Kiwami health bar styles should decrease from left to right instead from right to left.
 -- 5. No support for multiple bosses (no multiple health bars on screen).
@@ -66,6 +66,8 @@
 	local oegauge9 = Material("yak_bossbar/oe/9.png")
 	local oegauge10 = Material("yak_bossbar/oe/10.png")
 	local oegauge11 = Material("yak_bossbar/oe/11.png")
+	local oegauge12 = Material("yak_bossbar/oe/12.png")
+	local oegauge13 = Material("yak_bossbar/oe/13.png")
 	--
 	
 	local gauge = Material("yak_bossbar/gauge.png")		-- active bar (we arent actually drawing all 16 bars at once, just 2 at a time)
