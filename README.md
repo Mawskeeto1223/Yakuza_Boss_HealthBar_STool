@@ -3,4 +3,4 @@ Unfinished modified version of [Republic Boss Health Bars](https://steamcommunit
 
 Serves as a base for different adaptations/better versions.
 
-Contains bugs. I do not intend to work on this anymore.
+Contains bugs and very bad code. I do not intend to work on this anymore.
